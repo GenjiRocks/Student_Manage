@@ -1,0 +1,27 @@
+<div class="container border rounded-3 p-3 mt-5 w-25">
+    <h2>Add Student</h2>
+    <form [formGroup]="editForm"  (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Student Name</label>
+        <input
+          formControlName = 'name'
+         
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div *ngFor="let subject of subjects" class="mb-3">
+        <label class="form-label">{{ subject }}</label>
+        <input
+        formControlName = '{{ subject }}'
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+      </div>
+  
+      <button  type="submit" class="btn btn-primary">Update Student</button>
+    </form>
+  </div>
+  
